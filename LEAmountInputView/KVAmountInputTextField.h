@@ -55,7 +55,7 @@ typedef void (^KVAmountInputTextFieldValueChanged)(NSNumber * amountValue);
 
 @property (nonatomic, assign) KVAmountInputTextFieldType type;
 
-@property (nonatomic, weak) id<KVAmountInputTextFieldDelegate> delegate;
+@property (nonatomic, weak) id<KVAmountInputTextFieldDelegate, UITextFieldDelegate> delegate;
 
 /**
  *  The amount value of the `KVAmountInputTextField`.
