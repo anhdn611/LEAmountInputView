@@ -24,9 +24,7 @@
 @end
 
 @implementation KVAmountInputTextField
-
-@synthesize delegate;
-
+@dynamic delegate;
 - (instancetype)initWithFrame:(CGRect)frame andInputType:(KVAmountInputTextFieldType)type {
     self = [super initWithFrame:frame];
     if (self) {
@@ -295,8 +293,8 @@
 
 - (void)didChangeAmount:(NSNumber *)amount
 {
-    if ([delegate respondsToSelector:@selector(textField:didChangeAmount:)]) {
-        [delegate textField:self didChangeAmount:amount];
+    if ([self.delegate respondsToSelector:@selector(textField:didChangeAmount:)]) {
+        [self.delegate textField:self didChangeAmount:amount];
     }
     
     if (self.valueChangedBlock) {
